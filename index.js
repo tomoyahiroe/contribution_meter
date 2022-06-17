@@ -6,7 +6,7 @@ const graphqlWithAuth = graphql.defaults({
   authorization: `token ${token}`,
  },
 });
-
+import * as readline from 'readline';
 const QUERY = `
 	query getUser($login: String!) {
 		user(login: $login) {
@@ -22,13 +22,21 @@ const QUERY = `
 	}
 `;
 
-async function getInfo() {
+async function getInfo(username) {
 	try {
-		const {user} = await graphqlWithAuth(QUERY, {login: 'tomoyahiroe'});
+		const {user} = await graphqlWithAuth(QUERY, {login: username});
 		console.log(user);
 	} catch(err) {
 		console.error(err.message);
 	}
 }
 
-getInfo();
+var reader=readline.createInterface({
+	input: process.stdin,
+	output: process.stdout
+})
+reader.question("INPUT TARGET USERNAME\n",
+inS=>{
+	reader.close();
+	getInfo(inS)
+})
