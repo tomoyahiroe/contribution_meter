@@ -28,7 +28,7 @@ async function getInfo(username) {
     const { user } = await graphqlWithAuth(QUERY, { login: username });
     console.log(user);
   } catch (err) {
-    console.error(err);
+    console.error(err.message);
   }
 }
 
