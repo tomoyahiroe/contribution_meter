@@ -31,7 +31,7 @@ async function getInfo(username) {
 	}
 }
 
-var reader=readline.createInterface({
+const reader=readline.createInterface({
 	input: process.stdin,
 	output: process.stdout
 })
