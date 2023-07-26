@@ -1,5 +1,5 @@
-import { graphql } from "@octokit/graphql";
-import * as readline from "readline";
+import { graphql } from '@octokit/graphql';
+import * as readline from 'readline';
 const token = process.env.GIT_EXTENSION_TOKEN;
 
 const graphqlWithAuth = graphql.defaults({
@@ -23,11 +23,11 @@ const QUERY = `
 	}
 `;
 
-async function getInfo(username) {
+async function getInfo(username: any) {
   try {
-    const { user } = await graphqlWithAuth(QUERY, { login: username });
+    const { user }: any = await graphqlWithAuth(QUERY, { login: username });
     console.log(user);
-  } catch (err) {
+  } catch (err: any) {
     console.error(err.message);
   }
 }
@@ -36,7 +36,7 @@ const reader = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
 });
-reader.question("INPUT TARGET USERNAME\n", (inS) => {
+reader.question('INPUT TARGET USERNAME\n', (inS) => {
   reader.close();
   getInfo(inS);
 });
