@@ -1,6 +1,7 @@
 import { graphql } from '@octokit/graphql';
 import * as readline from 'readline';
 import { QUERY } from './query/total_contributions.js';
+import { User } from './gql/type.js';
 const token = process.env.GIT_EXTENSION_TOKEN;
 
 const graphqlWithAuth = graphql.defaults({
@@ -9,15 +10,21 @@ const graphqlWithAuth = graphql.defaults({
   },
 });
 
-async function getInfo(username: any) {
+async function getInfo(username: string) {
   try {
-    const { user }: any = await graphqlWithAuth(QUERY, { login: username });
+    const user = await graphqlWithAuth<User>(QUERY, { login: username });
     console.log(
       'total contributions: ' +
         user.contributionsCollection.contributionCalendar.totalContributions
     );
-  } catch (err: any) {
-    console.error(err.message);
+  } catch (err) {
+    if (err instanceof Error) {
+      console.log(err.message);
+    } else if (typeof err === 'string') {
+      console.log(err);
+    } else {
+      console.log('unexpected error');
+    }
   }
 }
 
