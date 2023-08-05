@@ -12,11 +12,12 @@ const graphqlWithAuth = graphql.defaults({
 
 async function getInfo(username: string) {
   try {
-    const user = await graphqlWithAuth<User>(QUERY, { login: username });
-    console.log(
-      'total contributions: ' +
-        user.contributionsCollection.contributionCalendar.totalContributions
-    );
+    const user = await graphqlWithAuth<{ user: User }>(QUERY, {
+      login: username,
+    });
+    const totalContributions: any =
+      user.user.contributionsCollection.contributionCalendar.totalContributions;
+    process.stdout.write(`total contributions: ${totalContributions}\n`);
   } catch (err) {
     if (err instanceof Error) {
       console.log(err.message);
