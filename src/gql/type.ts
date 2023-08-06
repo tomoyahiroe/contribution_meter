@@ -16,9 +16,7 @@ export type MakeEmpty<
 export type Incremental<T> =
 	| T
 	| {
-			[P in keyof T]?: P extends ' $fragmentName' | '__typename'
-				? T[P]
-				: never;
+			[P in keyof T]?: P extends ' $fragmentName' | '__typename' ? T[P] : never;
 	  };
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
@@ -13076,9 +13074,7 @@ export type OrgRestoreMemberAuditEntry = AuditEntry &
 		/** The number of issue assignments for the restored member. */
 		restoredIssueAssignmentsCount?: Maybe<Scalars['Int']['output']>;
 		/** Restored organization membership objects. */
-		restoredMemberships?: Maybe<
-			Array<OrgRestoreMemberAuditEntryMembership>
-		>;
+		restoredMemberships?: Maybe<Array<OrgRestoreMemberAuditEntryMembership>>;
 		/** The number of restored memberships. */
 		restoredMembershipsCount?: Maybe<Scalars['Int']['output']>;
 		/** The number of repositories of the restored member. */
@@ -13578,9 +13574,7 @@ export type Organization = Actor &
 		/** The HTTP URL listing organization's teams */
 		teamsUrl: Scalars['URI']['output'];
 		/** The amount in United States cents (e.g., 500 = $5.00 USD) that this entity has spent on GitHub to fund sponsorships. Only returns a value when viewed by the user themselves or by a user who can manage sponsorships for the requested organization. */
-		totalSponsorshipAmountAsSponsorInCents?: Maybe<
-			Scalars['Int']['output']
-		>;
+		totalSponsorshipAmountAsSponsorInCents?: Maybe<Scalars['Int']['output']>;
 		/** The organization's Twitter username. */
 		twitterUsername?: Maybe<Scalars['String']['output']>;
 		/** Identifies the date and time when the object was last updated. */
@@ -26536,13 +26530,9 @@ export type UpdateEnterpriseMembersCanCreateRepositoriesSettingInput = {
 		Scalars['Boolean']['input']
 	>;
 	/** Allow members to create private repositories. Defaults to current value. */
-	membersCanCreatePrivateRepositories?: InputMaybe<
-		Scalars['Boolean']['input']
-	>;
+	membersCanCreatePrivateRepositories?: InputMaybe<Scalars['Boolean']['input']>;
 	/** Allow members to create public repositories. Defaults to current value. */
-	membersCanCreatePublicRepositories?: InputMaybe<
-		Scalars['Boolean']['input']
-	>;
+	membersCanCreatePublicRepositories?: InputMaybe<Scalars['Boolean']['input']>;
 	/** When false, allow member organizations to set their own repository creation member privileges. */
 	membersCanCreateRepositoriesPolicyEnabled?: InputMaybe<
 		Scalars['Boolean']['input']
@@ -27729,9 +27719,7 @@ export type User = Actor &
 		 */
 		topRepositories: RepositoryConnection;
 		/** The amount in United States cents (e.g., 500 = $5.00 USD) that this entity has spent on GitHub to fund sponsorships. Only returns a value when viewed by the user themselves or by a user who can manage sponsorships for the requested organization. */
-		totalSponsorshipAmountAsSponsorInCents?: Maybe<
-			Scalars['Int']['output']
-		>;
+		totalSponsorshipAmountAsSponsorInCents?: Maybe<Scalars['Int']['output']>;
 		/** The user's Twitter username. */
 		twitterUsername?: Maybe<Scalars['String']['output']>;
 		/** Identifies the date and time when the object was last updated. */
@@ -27985,9 +27973,7 @@ export type UserRepositoriesArgs = {
 export type UserRepositoriesContributedToArgs = {
 	after?: InputMaybe<Scalars['String']['input']>;
 	before?: InputMaybe<Scalars['String']['input']>;
-	contributionTypes?: InputMaybe<
-		Array<InputMaybe<RepositoryContributionType>>
-	>;
+	contributionTypes?: InputMaybe<Array<InputMaybe<RepositoryContributionType>>>;
 	first?: InputMaybe<Scalars['Int']['input']>;
 	hasIssues?: InputMaybe<Scalars['Boolean']['input']>;
 	includeUserRepositories?: InputMaybe<Scalars['Boolean']['input']>;

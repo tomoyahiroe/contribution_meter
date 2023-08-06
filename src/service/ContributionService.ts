@@ -15,11 +15,8 @@ export class ContributionService implements ContributionServiceInterface {
 			.getUser(username, TotalContributionQuery.QUERY)
 			.then((user: User) => {
 				const totalContributions =
-					user.contributionsCollection.contributionCalendar
-						.totalContributions;
-				process.stdout.write(
-					`total contributions: ${totalContributions}\n`
-				);
+					user.contributionsCollection.contributionCalendar.totalContributions;
+				process.stdout.write(`total contributions: ${totalContributions}\n`);
 			})
 			.catch((err) => {
 				if (err instanceof Error) {

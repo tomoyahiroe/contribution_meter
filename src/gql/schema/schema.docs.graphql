@@ -1186,10 +1186,7 @@ type App implements Node {
 		"""
 		Ordering options for IP allow list entries returned.
 		"""
-		orderBy: IpAllowListEntryOrder = {
-			field: ALLOW_LIST_VALUE
-			direction: ASC
-		}
+		orderBy: IpAllowListEntryOrder = { field: ALLOW_LIST_VALUE, direction: ASC }
 	): IpAllowListEntryConnection!
 
 	"""
@@ -5351,10 +5348,7 @@ type CommitContributionsByRepository {
 		"""
 		Ordering options for commit contributions returned from the connection.
 		"""
-		orderBy: CommitContributionOrder = {
-			field: OCCURRED_AT
-			direction: DESC
-		}
+		orderBy: CommitContributionOrder = { field: OCCURRED_AT, direction: DESC }
 	): CreatedCommitContributionConnection!
 
 	"""
@@ -6534,13 +6528,7 @@ input CreateAttributionInvitationInput {
 	"""
 	ownerId: ID!
 		@possibleTypes(
-			concreteTypes: [
-				"Bot"
-				"Enterprise"
-				"Mannequin"
-				"Organization"
-				"User"
-			]
+			concreteTypes: ["Bot", "Enterprise", "Mannequin", "Organization", "User"]
 		)
 
 	"""
@@ -6548,13 +6536,7 @@ input CreateAttributionInvitationInput {
 	"""
 	sourceId: ID!
 		@possibleTypes(
-			concreteTypes: [
-				"Bot"
-				"Enterprise"
-				"Mannequin"
-				"Organization"
-				"User"
-			]
+			concreteTypes: ["Bot", "Enterprise", "Mannequin", "Organization", "User"]
 		)
 
 	"""
@@ -6562,13 +6544,7 @@ input CreateAttributionInvitationInput {
 	"""
 	targetId: ID!
 		@possibleTypes(
-			concreteTypes: [
-				"Bot"
-				"Enterprise"
-				"Mannequin"
-				"Organization"
-				"User"
-			]
+			concreteTypes: ["Bot", "Enterprise", "Mannequin", "Organization", "User"]
 		)
 }
 
@@ -9417,8 +9393,7 @@ input DeletePullRequestReviewInput {
 	"""
 	The Node ID of the pull request review to delete.
 	"""
-	pullRequestReviewId: ID!
-		@possibleTypes(concreteTypes: ["PullRequestReview"])
+	pullRequestReviewId: ID! @possibleTypes(concreteTypes: ["PullRequestReview"])
 }
 
 """
@@ -9473,8 +9448,7 @@ input DeleteRepositoryRulesetInput {
 	"""
 	The global relay id of the repository ruleset to be deleted.
 	"""
-	repositoryRulesetId: ID!
-		@possibleTypes(concreteTypes: ["RepositoryRuleset"])
+	repositoryRulesetId: ID! @possibleTypes(concreteTypes: ["RepositoryRuleset"])
 }
 
 """
@@ -11849,8 +11823,7 @@ input DismissPullRequestReviewInput {
 	"""
 	The Node ID of the pull request review to modify.
 	"""
-	pullRequestReviewId: ID!
-		@possibleTypes(concreteTypes: ["PullRequestReview"])
+	pullRequestReviewId: ID! @possibleTypes(concreteTypes: ["PullRequestReview"])
 }
 
 """
@@ -13415,10 +13388,7 @@ type EnterpriseOwnerInfo {
 		"""
 		Ordering options for IP allow list entries returned.
 		"""
-		orderBy: IpAllowListEntryOrder = {
-			field: ALLOW_LIST_VALUE
-			direction: ASC
-		}
+		orderBy: IpAllowListEntryOrder = { field: ALLOW_LIST_VALUE, direction: ASC }
 	): IpAllowListEntryConnection!
 
 	"""
@@ -13912,10 +13882,7 @@ type EnterpriseOwnerInfo {
 		"""
 		Ordering options for pending repository collaborator invitations returned from the connection.
 		"""
-		orderBy: RepositoryInvitationOrder = {
-			field: CREATED_AT
-			direction: DESC
-		}
+		orderBy: RepositoryInvitationOrder = { field: CREATED_AT, direction: DESC }
 
 		"""
 		The search string to look for.
@@ -14318,10 +14285,7 @@ type EnterpriseServerInstallation implements Node {
 		"""
 		Ordering options for Enterprise Server user accounts returned from the connection.
 		"""
-		orderBy: EnterpriseServerUserAccountOrder = {
-			field: LOGIN
-			direction: ASC
-		}
+		orderBy: EnterpriseServerUserAccountOrder = { field: LOGIN, direction: ASC }
 	): EnterpriseServerUserAccountConnection!
 
 	"""
@@ -22283,8 +22247,7 @@ type Mutation {
 		Parameters for DeletePackageVersion
 		"""
 		input: DeletePackageVersionInput!
-	): DeletePackageVersionPayload
-		@preview(toggledBy: "package-deletes-preview")
+	): DeletePackageVersionPayload @preview(toggledBy: "package-deletes-preview")
 
 	"""
 	Deletes a project.
@@ -23732,8 +23695,7 @@ type Mutation {
 		Parameters for UpdateTeamReviewAssignment
 		"""
 		input: UpdateTeamReviewAssignmentInput!
-	): UpdateTeamReviewAssignmentPayload
-		@preview(toggledBy: "stone-crop-preview")
+	): UpdateTeamReviewAssignmentPayload @preview(toggledBy: "stone-crop-preview")
 
 	"""
 	Update team repository.
@@ -27517,10 +27479,7 @@ type Organization implements Actor & AnnouncementBanner & MemberStatusable & Nod
 		"""
 		Ordering options for IP allow list entries returned.
 		"""
-		orderBy: IpAllowListEntryOrder = {
-			field: ALLOW_LIST_VALUE
-			direction: ASC
-		}
+		orderBy: IpAllowListEntryOrder = { field: ALLOW_LIST_VALUE, direction: ASC }
 	): IpAllowListEntryConnection!
 
 	"""
@@ -28141,10 +28100,7 @@ type Organization implements Actor & AnnouncementBanner & MemberStatusable & Nod
 		"""
 		Ordering options for repository migrations returned.
 		"""
-		orderBy: RepositoryMigrationOrder = {
-			field: CREATED_AT
-			direction: ASC
-		}
+		orderBy: RepositoryMigrationOrder = { field: CREATED_AT, direction: ASC }
 
 		"""
 		Filter repository migrations by repository name.
@@ -28400,10 +28356,7 @@ type Organization implements Actor & AnnouncementBanner & MemberStatusable & Nod
 		"""
 		Ordering options for sponsorship updates returned from the connection.
 		"""
-		orderBy: SponsorshipNewsletterOrder = {
-			field: CREATED_AT
-			direction: DESC
-		}
+		orderBy: SponsorshipNewsletterOrder = { field: CREATED_AT, direction: DESC }
 	): SponsorshipNewsletterConnection!
 
 	"""
@@ -32349,10 +32302,7 @@ type ProjectV2Item implements Node {
 		"""
 		Ordering options for project v2 item field values returned from the connection
 		"""
-		orderBy: ProjectV2ItemFieldValueOrder = {
-			field: POSITION
-			direction: ASC
-		}
+		orderBy: ProjectV2ItemFieldValueOrder = { field: POSITION, direction: ASC }
 	): ProjectV2ItemFieldValueConnection!
 	id: ID!
 
@@ -34569,8 +34519,7 @@ type PullRequest implements Assignable & Closable & Comment & Labelable & Lockab
 	"""
 	Detailed information about the current pull request merge state status.
 	"""
-	mergeStateStatus: MergeStateStatus!
-		@preview(toggledBy: "merge-info-preview")
+	mergeStateStatus: MergeStateStatus! @preview(toggledBy: "merge-info-preview")
 
 	"""
 	Whether or not the pull request can be merged based on the existence of merge conflicts.
@@ -37632,10 +37581,7 @@ type Query {
 		"""
 		Ordering options for the returned topics.
 		"""
-		orderBy: SecurityVulnerabilityOrder = {
-			field: UPDATED_AT
-			direction: DESC
-		}
+		orderBy: SecurityVulnerabilityOrder = { field: UPDATED_AT, direction: DESC }
 
 		"""
 		A package name to filter vulnerabilities by.
@@ -46992,10 +46938,7 @@ type SecurityAdvisory implements Node {
 		"""
 		Ordering options for the returned topics.
 		"""
-		orderBy: SecurityVulnerabilityOrder = {
-			field: UPDATED_AT
-			direction: DESC
-		}
+		orderBy: SecurityVulnerabilityOrder = { field: UPDATED_AT, direction: DESC }
 
 		"""
 		A package name to filter vulnerabilities by.
@@ -47999,10 +47942,7 @@ interface Sponsorable {
 		"""
 		Ordering options for sponsorship updates returned from the connection.
 		"""
-		orderBy: SponsorshipNewsletterOrder = {
-			field: CREATED_AT
-			direction: DESC
-		}
+		orderBy: SponsorshipNewsletterOrder = { field: CREATED_AT, direction: DESC }
 	): SponsorshipNewsletterConnection!
 
 	"""
@@ -56845,8 +56785,7 @@ input UpdatePullRequestReviewInput {
 	"""
 	The Node ID of the pull request review to modify.
 	"""
-	pullRequestReviewId: ID!
-		@possibleTypes(concreteTypes: ["PullRequestReview"])
+	pullRequestReviewId: ID! @possibleTypes(concreteTypes: ["PullRequestReview"])
 }
 
 """
@@ -57037,8 +56976,7 @@ input UpdateRepositoryRulesetInput {
 	"""
 	The global relay id of the repository ruleset to be updated.
 	"""
-	repositoryRulesetId: ID!
-		@possibleTypes(concreteTypes: ["RepositoryRuleset"])
+	repositoryRulesetId: ID! @possibleTypes(concreteTypes: ["RepositoryRuleset"])
 
 	"""
 	The list of rules for this ruleset
@@ -58699,10 +58637,7 @@ type User implements Actor & Node & PackageOwner & ProfileOwner & ProjectOwner &
 		"""
 		Ordering options for sponsorship updates returned from the connection.
 		"""
-		orderBy: SponsorshipNewsletterOrder = {
-			field: CREATED_AT
-			direction: DESC
-		}
+		orderBy: SponsorshipNewsletterOrder = { field: CREATED_AT, direction: DESC }
 	): SponsorshipNewsletterConnection!
 
 	"""
