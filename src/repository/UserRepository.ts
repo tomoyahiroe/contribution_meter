@@ -3,16 +3,12 @@ import { GithubApi } from '../gql/GithubApi.js';
 import { User } from '../gql/type.js';
 
 export class UserRepository implements UserRepositoryInterface {
-  protected username: string;
-  protected QUERY: string;
-  protected githubApi: GithubApi;
-  constructor(username: string, QUERY: string, githubApi: GithubApi) {
-    this.username = username;
-    this.QUERY = QUERY;
-    this.githubApi = githubApi;
-  }
+	protected githubApi: GithubApi;
+	constructor() {
+		this.githubApi = new GithubApi();
+	}
 
-  public getUser = async () => {
-    return await this.githubApi.getUser<User>(this.username, this.QUERY);
-  };
+	public getUser = async (username: string, QUERY: string) => {
+		return await this.githubApi.getUser<User>(username, QUERY);
+	};
 }
